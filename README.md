@@ -1,6 +1,6 @@
-## 机器学习平台
+## spring-cloud basic project
 
-#### 端口分配
+#### prot
 - 8001-8003 backend-eureka-service
 - 8004-8806 backend-config-service
 - 8007 backend-gateway-service
