@@ -1,0 +1,40 @@
+server:
+  port: 8050
+
+management:
+  security:
+    enabled: false
+
+spring:
+  application:
+    name: backend-test
+  cloud:
+    config:
+      name: backend-mybatis,backend-test
+      profile: dev
+      label: master
+      fail-fast: true #不加载配置,减少等待前置的时间
+      discovery:
+        enabled: true # 表示使用服务发现组件中的Config Server，而不自己指定Config Server的uri，默认false
+        service-id: backend-config-service # 指定Config Server在服务发现中的serviceId，默认是configserver
+  # kafka
+    stream:
+      kafka:
+        binder:
+          zk-nodes: namenode01:2181,datanode01:2181,datanode02:2181
+          brokers: namenode01:9092,datanode01:9092,datanode02:9092
+    bus:
+      trace:
+        enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8001/eureka/,http://peer2:8002/eureka
+      instance:
+        # 注册中心eurka地址
+        lease-expiration-duration-in-seconds: 30
+        lease-renewal-interval-in-seconds: 10
+
+
+

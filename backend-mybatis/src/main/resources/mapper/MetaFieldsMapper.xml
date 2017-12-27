@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.times.cloud.mybatis.mapper.MetaFieldsMapper">
+  <resultMap id="BaseResultMap" type="com.times.cloud.common.bean.mysql.MetaFields">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="FIELD_ID" jdbcType="VARCHAR" property="fieldId" />
+    <result column="FIELD_NAME" jdbcType="VARCHAR" property="fieldName" />
+    <result column="FIELD_CNNAME" jdbcType="VARCHAR" property="fieldCnname" />
+    <result column="FIELD_TYPE" jdbcType="INTEGER" property="fieldType" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+    <result column="FIELD_DESC" jdbcType="LONGVARCHAR" property="fieldDesc" />
+  </resultMap>
+</mapper>

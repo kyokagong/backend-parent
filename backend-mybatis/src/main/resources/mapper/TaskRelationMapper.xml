@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.times.cloud.mybatis.mapper.TaskRelationMapper">
+  <resultMap id="BaseResultMap" type="com.times.cloud.common.bean.mysql.TaskRelation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="TASK_REL_ID" jdbcType="VARCHAR" property="taskRelId" />
+    <result column="TASK_ID" jdbcType="VARCHAR" property="taskId" />
+    <result column="TO_TASK_ID" jdbcType="VARCHAR" property="toTaskId" />
+    <result column="RELATION_TYPE" jdbcType="INTEGER" property="relationType" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+  </resultMap>
+
+
+</mapper>

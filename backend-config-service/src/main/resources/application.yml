@@ -1,0 +1,16 @@
+server:
+  port: 8006
+
+spring:
+  application:
+    name: backend-config-service
+  profiles:
+    active: dev
+#kafka
+  cloud:
+    stream:
+      kafka:
+        binder:
+          zk-nodes: namenode01:2181,datanode01:2181,datanode02:2181
+          brokers: namenode01:9092,datanode01:9092,datanode02:9092
+

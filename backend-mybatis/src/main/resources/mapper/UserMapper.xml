@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.times.cloud.mybatis.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.times.cloud.common.bean.mysql.User">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="USER_ID" jdbcType="VARCHAR" property="userId" />
+    <result column="USER_TYPE" jdbcType="INTEGER" property="userType" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="USER_CNNAME" jdbcType="VARCHAR" property="userCnname" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="USER_DESC" jdbcType="VARCHAR" property="userDesc" />
+    <result column="STATE" jdbcType="VARCHAR" property="state" />
+    <result column="CREATE_DATE" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="MODIFIED_DATE" jdbcType="TIMESTAMP" property="modifiedDate" />
+  </resultMap>
+  <cache eviction="LRU" type="com.times.cloud.mybatis.cache.RedisCache" />
+</mapper>

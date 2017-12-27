@@ -1,0 +1,26 @@
+server:
+  port: 8008
+
+spring:
+  application:
+    name: backend-gateway-service
+  cloud:
+    config:
+      profile: dev
+      fail-fast: true #不加载配置,减少等待前置的时间
+      discovery:
+        enabled: true # 表示使用服务发现组件中的Config Server，而不自己指定Config Server的uri，默认false
+        service-id: backend-config-service # 指定Config Server在服务发现中的serviceId，默认是configserver
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8001/eureka/,http://peer2:8002/eureka
+      instance:
+        # 注册中心eurka地址
+        lease-expiration-duration-in-seconds: 30
+        lease-renewal-interval-in-seconds: 10
+
+
+
+
+

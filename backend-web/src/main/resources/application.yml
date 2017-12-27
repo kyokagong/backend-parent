@@ -1,0 +1,11 @@
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+
+server:
+  context-path: /backend-web/ #war部署不生效
+# for test
+application:
+  message: Hello Phil

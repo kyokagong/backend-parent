@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.times.cloud.mybatis.mapper.ProcessTaskMapper">
+  <resultMap id="BaseResultMap" type="com.times.cloud.common.bean.mysql.ProcessTask">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="PROCESS_ID" jdbcType="VARCHAR" property="processId" />
+    <result column="TASK_ID" jdbcType="VARCHAR" property="taskId" />
+  </resultMap>
+
+  <delete id="deleteByProcessIdAndTaskId" parameterType="java.lang.String">
+    DELETE FROM PROCESS_TASK WHERE PROCESS_ID = #{arg0}
+    AND TASK_ID = #{arg1}
+  </delete>
+
+</mapper>

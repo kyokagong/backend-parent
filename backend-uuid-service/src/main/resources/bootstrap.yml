@@ -1,0 +1,21 @@
+server:
+  port: 8009
+
+management:
+  security:
+    enabled: false
+
+spring:
+  application:
+    name: backend-uuid-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:8001/eureka/,http://peer2:8002/eureka
+      instance:
+        # 注册中心eurka地址
+        lease-expiration-duration-in-seconds: 30
+        lease-renewal-interval-in-seconds: 10
+
+

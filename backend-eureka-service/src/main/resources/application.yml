@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: backend-eureka-service
+eureka:
+  server:
+    enable-self-preservation: false # 关闭自我保护，从而保证会注销服务
+    eviction-interval-timer-in-ms: 3000 # 清理间隔
+
+---
+spring:
+  profiles: peer1
+server:
+  port: 8001
+eureka:
+  instance:
+    hostname: peer1   # 指定当profile=peer1时，主机名是namenode01
+  client:
+    service-url:
+      defaultZone: http://peer2:8002/eureka/  # 将自己注册到peer2这个Eureka上面去
+
+---
+spring:
+  profiles: peer2
+server:
+  port: 8002
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    service-url:
+      defaultZone: http://peer1:8001/eureka/
+
+
+
+
